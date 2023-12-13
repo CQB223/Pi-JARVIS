@@ -1,22 +1,22 @@
-Python 3 is installed by default on Raspberry Pi OS and is used for many important functions. Interfering with the system Python installation can cause problems for your operating system, so it’s important that if you install third-party Python libraries, you use the correct package-management tools.
+#Python 3 is installed by default on Raspberry Pi OS and is used for many important functions. Interfering with the system Python installation can cause problems for your operating system, so it’s important that if you install third-party Python libraries, you use the correct package-management tools.
 
-There are two routes to installing libraries into the default python distribution. You can use apt and install pre-configured system packages, or you can use pip to install packages which are not distributed as part of Raspberry Pi OS.
+#There are two routes to installing libraries into the default python distribution. You can use apt and install pre-configured system packages, or you can use pip to install packages which are not distributed as part of Raspberry Pi OS.
 
-IMPORTANT
-From Bookworm onwards, packages installed via pip must be installed into a Python Virtual Environment using venv. This has been introduced by the Python community, not Raspberry Pi; see PEP 668 for more details.
-Installing Python packages using apt
-IMPORTANT
-Installing packages using apt is the preferred method for installing Python libraries on Raspberry Pi OS.
-Packages installed via apt are tested, are usually pre-compiled so they install faster, and are designed for Raspberry Pi OS. They won’t break your system. Installing via this route also means that all required dependencies are also installed, and a log of installation is maintained by the OS so installation can be easily rolled back (uninstalled) if needed.
+#IMPORTANT
+#From Bookworm onwards, packages installed via pip must be installed into a Python Virtual Environment using venv. This has been introduced by the Python community, not Raspberry Pi; see PEP 668 for more details.
+#Installing Python packages using apt
+#IMPORTANT
+#Installing packages using apt is the preferred method for installing Python libraries on Raspberry Pi OS.
+#Packages installed via apt are tested, are usually pre-compiled so they install faster, and are designed for Raspberry Pi OS. They won’t break your system. Installing via this route also means that all required dependencies are also installed, and a log of installation is maintained by the OS so installation can be easily rolled back (uninstalled) if needed.
 
-For instance, to install the Python 3 library to support the Raspberry Pi Build HAT you would:
+#For instance, to install the Python 3 library to support the Raspberry Pi Build HAT you would:
 
 $ sudo apt install python3-build-hat
-…​to install the pre-built library.
+#…​to install the pre-built library.
 
-Using apt makes installing larger packages, like numpy (which has many native dependencies including a Fortran compiler), much simpler than installing individual packages using Python’s own package-management system.
+#Using apt makes installing larger packages, like numpy (which has many native dependencies including a Fortran compiler), much simpler than installing individual packages using Python’s own package-management system.
 
-If you want to install a Python library called "foobar" you can use apt search foobar to find the exact package name. In most cases, you’ll find that the required package is going to be called python-foobar or python3-foobar.
+#If you want to install a Python library called "foobar" you can use apt search foobar to find the exact package name. In most cases, you’ll find that the required package is going to be called python-foobar or python3-foobar.
 
 About Python virtual environments
 In previous versions of the operating system, it was possible to install libraries directly, system-wide, using the package installer for Python, commonly known as pip. You’ll find the following sort of command in many tutorials online.
